@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.FeeManagerController">
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <HBox spacing="10">
+                <Label text="Name:"/>
+                <TextField fx:id="nameField" />
+                <Label text="Class:"/>
+                <TextField fx:id="classField" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Total Fee:"/>
+                <TextField fx:id="totalFeeField" />
+                <Label text="Paid Fee:"/>
+                <TextField fx:id="paidFeeField" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Status:"/>
+                <ComboBox fx:id="statusBox" />
+            </HBox>
+
+            <HBox spacing="10">
+                <Button text="Add" onAction="#addStudent" />
+                <Button text="Delete" onAction="#deleteStudent" />
+                <Button text="Refresh" onAction="#loadData" />
+            </HBox>
+
+            <TableView fx:id="studentTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                    <TableColumn fx:id="classColumn" text="Class" prefWidth="100"/>
+                    <TableColumn fx:id="totalColumn" text="Total Fee" prefWidth="100"/>
+                    <TableColumn fx:id="paidColumn" text="Paid Fee" prefWidth="100"/>
+                    <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="100"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
