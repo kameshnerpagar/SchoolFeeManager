@@ -6,7 +6,8 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="application.FeeManagerController">
+            fx:controller="application.FeeManagerController"
+            stylesheets="@style.css">
 
     <center>
         <VBox spacing="10">
@@ -30,17 +31,20 @@
             <HBox spacing="10">
                 <Label text="Status:"/>
                 <ComboBox fx:id="statusBox" />
+                <Label>New Payment:</Label>
+                <TextField fx:id="newPaymentField"/>
             </HBox>
 
             <HBox spacing="10">
                 <Button text="Add" onAction="#addStudent" />
+                <Button text="Update" onAction="#updateStudent" />
                 <Button text="Delete" onAction="#deleteStudent" />
                 <Button text="Refresh" onAction="#loadData" />
             </HBox>
 
             <TableView fx:id="studentTable" prefHeight="300">
                 <columns>
-                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="srColumn" text="Sr No" prefWidth="60"/>
                     <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
                     <TableColumn fx:id="classColumn" text="Class" prefWidth="100"/>
                     <TableColumn fx:id="totalColumn" text="Total Fee" prefWidth="100"/>

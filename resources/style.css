@@ -1,9 +1,90 @@
+/* ===== ROOT & BACKGROUND ===== */
 .root {
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", "Roboto", sans-serif;
+    -fx-background-color: #f4f6fa;
 }
+
+/* ===== TABLEVIEW BASE ===== */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+}
+
+/* ===== TABLE HEADER ===== */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-color: transparent transparent #cbd5e1 transparent;
+    -fx-padding: 5 0 5 0;
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+    -fx-alignment: CENTER;
+}
+
+/* ===== ROW STYLING ===== */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-font-size: 13px;
+    -fx-text-fill: #334155;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9fafb;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e0f2fe;
+    -fx-text-fill: #1e3a8a;
+    -fx-cursor: hand;
+}
+
+/* ===== SELECTION HIGHLIGHT ===== */
+.table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+}
+
+/* ===== TABLE CELLS ===== */
+.table-cell {
+    -fx-alignment: CENTER;
+    -fx-padding: 6;
+}
+
+/* ===== BUTTONS ===== */
 .button {
-    -fx-background-color: #4CAF50;
+    -fx-background-color: linear-gradient(to bottom right, #3b82f6, #2563eb);
     -fx-text-fill: white;
     -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom right, #2563eb, #1e40af);
+}
+
+/* ===== INPUT FIELDS ===== */
+.text-field, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 8;
+    -fx-font-size: 13px;
+}
+
+.combo-box {
+    -fx-pref-width: 150;
 }
