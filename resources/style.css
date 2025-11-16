@@ -1,65 +1,73 @@
-/* ===== ROOT & BACKGROUND ===== */
+/* GLOBAL */
 .root {
-    -fx-font-family: "Segoe UI", "Roboto", sans-serif;
-    -fx-background-color: #f4f6fa;
+    -fx-font-family: "Segoe UI", Roboto, sans-serif;
+    -fx-background-color: #f3f6fa;
 }
 
-/* ===== TABLEVIEW BASE ===== */
-.table-view {
+/* -------------------------
+   Modern Table (Tailwind-like)
+   ------------------------- */
+
+.modern-table {
     -fx-background-color: white;
-    -fx-border-color: #e2e8f0;
-    -fx-border-radius: 10;
     -fx-background-radius: 10;
+    -fx-border-radius: 10;
     -fx-padding: 8;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);
+    -fx-border-color: #e6e9ee;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 3);
 }
 
-/* ===== TABLE HEADER ===== */
-.table-view .column-header-background {
-    -fx-background-color: linear-gradient(to bottom, #f8fafc, #e2e8f0);
-    -fx-border-radius: 10 10 0 0;
-    -fx-background-radius: 10 10 0 0;
-    -fx-border-color: transparent transparent #cbd5e1 transparent;
-    -fx-padding: 5 0 5 0;
+/* header background */
+.modern-table .column-header-background {
+    -fx-background-color: #f8fafc; /* light gray */
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 0 8 0;
 }
 
-.table-view .column-header,
-.table-view .column-header .label {
-    -fx-font-weight: bold;
+/* header cell */
+.modern-table .column-header,
+.modern-table .column-header .label {
+    -fx-font-weight: 700;
     -fx-font-size: 13px;
-    -fx-text-fill: #1e293b;
-    -fx-alignment: CENTER;
+    -fx-text-fill: #374151; /* gray-700 */
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8 12;
 }
 
-/* ===== ROW STYLING ===== */
-.table-row-cell {
+/* table rows */
+.modern-table .table-row-cell {
     -fx-background-color: white;
-    -fx-border-color: transparent transparent #f1f5f9 transparent;
     -fx-font-size: 13px;
-    -fx-text-fill: #334155;
+    -fx-text-fill: #374151;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
 }
 
-.table-row-cell:odd {
-    -fx-background-color: #f9fafb;
+.modern-table .table-row-cell:odd {
+    -fx-background-color: #fbfbfc; /* very light stripe */
 }
 
-.table-row-cell:hover {
-    -fx-background-color: #e0f2fe;
-    -fx-text-fill: #1e3a8a;
-    -fx-cursor: hand;
+.modern-table .table-row-cell:hover {
+    -fx-background-color: #f3f4f6;
 }
 
-/* ===== SELECTION HIGHLIGHT ===== */
-.table-row-cell:selected {
-    -fx-background-color: linear-gradient(to right, #3b82f6, #2563eb);
-    -fx-text-fill: white;
+/* selection */
+.modern-table .table-row-cell:selected {
+    -fx-background-color: #e6f0ff;
+    -fx-text-fill: #0b3a7a;
 }
 
-/* ===== TABLE CELLS ===== */
-.table-cell {
-    -fx-alignment: CENTER;
-    -fx-padding: 6;
+/* cells */
+.modern-table .table-cell {
+    -fx-padding: 10 12;
+    -fx-alignment: CENTER_LEFT; /* left align text like Tailwind */
 }
+
+/* make scrollbars minimal (optional) */
+.modern-table .scroll-bar:vertical {
+    -fx-pref-width: 10;
+}
+
 
 /* ===== BUTTONS ===== */
 .button {
@@ -88,3 +96,136 @@
 .combo-box {
     -fx-pref-width: 150;
 }
+
+
+/* ---------------- LOGIN PAGE ---------------- */
+
+.top-bar {
+    -fx-background-color: linear-gradient(to right, #2a72ff, #4a90e2);
+    -fx-padding: 18;
+}
+
+.top-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+/* Login background wrapper */
+.login-bg {
+    -fx-padding: 40 0 40 0;
+    -fx-background-color: #f3f6fa;
+}
+
+/* Card already exists but add these if missing */
+.login-card {
+    -fx-background-color: white;
+    -fx-padding: 30;
+    -fx-spacing: 15;
+    -fx-min-width: 380;
+    -fx-max-width: 420;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 4);
+}
+
+
+.login-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.primary-btn {
+    -fx-background-color: #2a72ff;
+    -fx-text-fill: white;
+    -fx-padding: 10 25;
+    -fx-font-size: 16px;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #1f5fe0;
+}
+
+.message-label {
+    -fx-text-fill: red;
+    -fx-font-size: 13px;
+}
+
+/* action buttons - admin page  */
+.action-btn {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-size: 14px;
+    -fx-padding: 10 18;
+    -fx-pref-width: 200;     /* Increase this if required */
+}
+
+.action-btn:hover {
+    -fx-background-color: #125bb5;
+}
+
+/* notification and anoucement sections - admin */
+
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0.2, 0, 2);
+}
+
+
+/* Clean List: No extra padding, no ugly scrollbars */
+.clean-list {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: white;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+/* Remove horizontal scrollbar */
+.clean-list .scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-max-height: 0;
+}
+
+/* Make vertical scrollbar thin and modern */
+.clean-list .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-pref-width: 6;
+}
+
+.clean-list .scroll-bar:vertical .thumb {
+    -fx-background-color: #c7d2fe; /* soft blue thumb */
+    -fx-background-radius: 5;
+}
+
+.clean-list .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+}
+
+/* List cells spacing improved */
+.clean-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 4 6;
+    -fx-font-size: 13px;
+    -fx-text-fill: #333;
+}
+
+.clean-list .list-cell:hover {
+    -fx-background-color: #eef4ff;
+}
+
+.clean-list .list-cell:selected {
+    -fx-background-color: #dbeafe;
+    -fx-text-fill: black;
+}
+
+
+
+
+

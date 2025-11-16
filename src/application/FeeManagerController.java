@@ -170,7 +170,8 @@ public class FeeManagerController {
                         rs.getDouble("total_fee"),
                         rs.getDouble("paid_fee"),
                         rs.getDouble("balance"),
-                        rs.getString("status")
+                        rs.getString("status"),
+                        rs.getDate("due_date").toLocalDate()
                 ));
             }
             studentTable.setItems(studentList);

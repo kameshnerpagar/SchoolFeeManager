@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="application.controller.AdminDashboardController"
+            stylesheets="@style.css">
+
+    <!-- TOP BLUE BAR -->
+    <top>
+        <HBox spacing="20" style="-fx-background-color:#1976D2; -fx-padding:15;">
+            <children>
+                <Label text="School Fee Manager - Admin"
+                       style="-fx-text-fill:white; -fx-font-size:20px; -fx-font-weight:bold;" />
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button text="Logout" onAction="#logout"
+                        style="-fx-background-color:#fff; -fx-text-fill:black; -fx-font-weight:bold;"/>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <HBox spacing="20" style="-fx-padding:20;">
+            <children>
+
+                <!-- LEFT COLUMN -->
+                <VBox spacing="15" style="-fx-background-color:#f8f9fa; -fx-padding:15; -fx-pref-width:250; -fx-background-radius:10;">
+                    <children>
+                        <Label text="Quick Actions"
+                               style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+                        <Button text="Add Student" onAction="#openAddStudentPopup"
+                                styleClass="action-btn"/>
+
+                        <Button text="Update Student" onAction="#openEditStudentPopup"
+                                styleClass="action-btn"/>
+
+                        <Button text="Delete Student" onAction="#onDeleteStudent"
+                                styleClass="action-btn"/>
+
+                        <Separator/>
+
+                        <VBox spacing="12" styleClass="card" style="-fx-padding:18;">
+                            <Label text="Notifications"
+                                   style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                            <ListView fx:id="notificationList"
+                                      styleClass="clean-list"
+                                      prefHeight="220"/>
+                        </VBox>
+
+                    </children>
+                </VBox>
+
+                <!-- CENTER COLUMN -->
+                <VBox spacing="20" HBox.hgrow="ALWAYS">
+
+                    <children>
+
+                        <!-- SUMMARY CARDS -->
+                        <HBox spacing="20">
+                            <children>
+
+                                <!-- CARD 1 -->
+                                <VBox spacing="10"
+                                      style="-fx-background-color:white; -fx-padding:15; -fx-border-color:#ddd; -fx-border-radius:10; -fx-background-radius:10;"
+                                      prefWidth="250">
+                                    <children>
+                                        <Label text="Total Students"
+                                               style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                                        <Label fx:id="totalStudentsLabel"
+                                               text="0"
+                                               style="-fx-font-size:26px; -fx-font-weight:bold;"/>
+                                    </children>
+                                </VBox>
+
+                                <!-- CARD 2 -->
+                                <VBox spacing="10"
+                                      style="-fx-background-color:white; -fx-padding:15; -fx-border-color:#ddd; -fx-border-radius:10; -fx-background-radius:10;"
+                                      prefWidth="250">
+                                    <children>
+                                        <Label text="Total Collection"
+                                               style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                                        <Label fx:id="totalCollectionLabel"
+                                               text="₹0"
+                                               style="-fx-font-size:26px; -fx-font-weight:bold;"/>
+                                    </children>
+                                </VBox>
+
+                                <!-- CARD 3 -->
+                                <VBox spacing="10"
+                                      style="-fx-background-color:white; -fx-padding:15; -fx-border-color:#ddd; -fx-border-radius:10; -fx-background-radius:10;"
+                                      prefWidth="250">
+                                    <children>
+                                        <Label text="Pending Amount"
+                                               style="-fx-font-size:14px; -fx-font-weight:bold;"/>
+                                        <Label fx:id="pendingAmountLabel"
+                                               text="₹0"
+                                               style="-fx-font-size:26px; -fx-font-weight:bold;"/>
+                                    </children>
+                                </VBox>
+
+                            </children>
+                        </HBox>
+
+                        <!-- MAIN CONTENT BOX -->
+                        <VBox spacing="10"
+                              style="-fx-background-color:white; -fx-padding:15; -fx-border-color:#ddd; -fx-border-radius:8; -fx-background-radius:8;"
+                              prefHeight="400">
+
+                            <children>
+
+                                <Label text="Student Fee Records"
+                                       style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                                <TableView fx:id="studentTable" VBox.vgrow="ALWAYS" styleClass="modern-table" >
+                                    <columns>
+                                        <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+                                        <TableColumn fx:id="colClass" text="Class" prefWidth="80"/>
+                                        <TableColumn fx:id="colTotalFee" text="Total Fee" prefWidth="100"/>
+                                        <TableColumn fx:id="colPaidFee" text="Paid Fee" prefWidth="100"/>
+                                        <TableColumn fx:id="colBalance" text="Balance" prefWidth="100"/>
+                                        <TableColumn fx:id="colDueDate" text="Due Date" prefWidth="120"/>
+                                        <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+                                    </columns>
+                                </TableView>
+
+                            </children>
+                        </VBox>
+
+
+                    </children>
+                </VBox>
+
+
+                <!-- RIGHT COLUMN -->
+                <VBox spacing="15" style="-fx-background-color:#f8f9fa; -fx-padding:15; -fx-pref-width:260; -fx-background-radius:10;">
+                    <children>
+
+                        <VBox spacing="12" styleClass="card" style="-fx-padding:18;">
+                            <Label text="Top Defaulters"
+                                   style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                            <ListView fx:id="defaultersList"
+                                      styleClass="clean-list"
+                                      prefHeight="180"/>
+                        </VBox>
+
+
+                        <Separator/>
+
+                        <VBox spacing="12" styleClass="card" style="-fx-padding:18;">
+                            <Label text="Announcements"
+                                   style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+                            <Button text="Add Announcement"
+                                    onAction="#openAnnouncementPopup"
+                                    styleClass="action-btn"/>
+
+                            <ListView fx:id="announcementList"
+                                      styleClass="clean-list"
+                                      prefHeight="180"/>
+                        </VBox>
+
+
+                    </children>
+                </VBox>
+
+            </children>
+        </HBox>
+    </center>
+
+</BorderPane>

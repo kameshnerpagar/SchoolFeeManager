@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.controller.AddStudentController"
+      style="-fx-padding:20;">
+
+    <Label text="Add New Student" style="-fx-font-size: 20px; -fx-font-weight:bold;" />
+
+    <TextField fx:id="nameField" promptText="Student Name"/>
+    <TextField fx:id="classField" promptText="Class"/>
+    <TextField fx:id="totalFeeField" promptText="Total Fee"/>
+    <TextField fx:id="paidFeeField" promptText="Paid Fee"/>
+    <DatePicker fx:id="dueDateField"/>
+
+    <Button text="Add Student" onAction="#onAddStudent"
+            style="-fx-background-color:#4CAF50; -fx-text-fill:white;" />
+
+</VBox>

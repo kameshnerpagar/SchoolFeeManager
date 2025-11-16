@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.controller.AnnouncementPopupController"
+      style="-fx-padding: 20;">
+
+    <Label text="Create Announcement" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <TextArea fx:id="messageField" prefRowCount="4" prefWidth="250"/>
+
+    <Button text="Save" onAction="#onSave"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+
+</VBox>

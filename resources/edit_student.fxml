@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.controller.EditStudentController"
+      style="-fx-padding:20;">
+
+    <Label text="Update Student" style="-fx-font-size:20px; -fx-font-weight:bold;" />
+
+    <TextField fx:id="nameField" promptText="Student Name"/>
+    <TextField fx:id="classField" promptText="Class"/>
+    <TextField fx:id="totalFeeField" promptText="Total Fee" editable="false"/>
+    <TextField fx:id="paidFeeField" promptText="Paid Fee" editable="false"/>
+    <TextField fx:id="newPaymentField" promptText="Add New Payment"/>
+    <DatePicker fx:id="dueDateField"/>
+
+    <Button text="Update" onAction="#onUpdate"
+            style="-fx-background-color:#2196F3; -fx-text-fill:white;"/>
+
+</VBox>

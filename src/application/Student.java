@@ -1,5 +1,7 @@
 package application;
 
+import java.time.LocalDate;
+
 public class Student {
     private int id;
     private String name;
@@ -8,8 +10,10 @@ public class Student {
     private double paidFee;
     private double balance;
     private String status;
+    private LocalDate dueDate;
 
-    public Student(int id, String name, String studentClass, double totalFee, double paidFee, double balance, String status) {
+
+    public Student(int id, String name, String studentClass, double totalFee, double paidFee, double balance, String status, LocalDate dueDate) {
         this.id = id;
         this.name = name;
         this.studentClass = studentClass;
@@ -17,6 +21,7 @@ public class Student {
         this.paidFee = paidFee;
         this.balance = balance;
         this.status = status;
+        this.dueDate = dueDate;
     }
 
     public int getId() { return id; }
@@ -26,4 +31,11 @@ public class Student {
     public double getPaidFee() { return paidFee; }
     public double getBalance() { return balance; }
     public String getStatus() { return status; }
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
 }
