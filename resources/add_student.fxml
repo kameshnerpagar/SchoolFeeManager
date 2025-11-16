@@ -17,6 +17,6 @@
     <DatePicker fx:id="dueDateField"/>
 
     <Button text="Add Student" onAction="#onAddStudent"
-            style="-fx-background-color:#4CAF50; -fx-text-fill:white;" />
+            style="-fx-background-color:#1976D2; -fx-text-fill:white;" />
 
 </VBox>

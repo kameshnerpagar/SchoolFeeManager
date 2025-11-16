@@ -98,7 +98,7 @@
             <!-- PAY BUTTON -->
             <Button text="Pay Fee"
                     onAction="#openPayPopup"
-                    style="-fx-background-color:#43a047; -fx-text-fill:white;
+                    style="-fx-background-color:#1976D2; -fx-text-fill:white;
                            -fx-padding:12 25; -fx-font-size:16; -fx-background-radius:8;"
                     VBox.vgrow="NEVER"/>
 

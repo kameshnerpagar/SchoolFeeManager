@@ -27,7 +27,7 @@
 
         <Button text="Confirm Payment"
                 onAction="#onConfirmPayment"
-                style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-padding: 7 20;"/>
+                style="-fx-background-color: #1976D2; -fx-text-fill: white; -fx-padding: 7 20;"/>
 
     </VBox>
 

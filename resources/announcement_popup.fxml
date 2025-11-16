@@ -13,6 +13,6 @@
     <TextArea fx:id="messageField" prefRowCount="4" prefWidth="250"/>
 
     <Button text="Save" onAction="#onSave"
-            style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+            style="-fx-background-color: #1976D2; -fx-text-fill: white;" />
 
 </VBox>
